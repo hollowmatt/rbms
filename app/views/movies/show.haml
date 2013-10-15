@@ -1,0 +1,13 @@
+%h1
+	= @movie.title
+
+%hr
+%p
+	= @movie.tagline
+	%br
+	= @movie.overview
+	%br
+		%b
+			= t 'movie.runtime'
+		= @movie.runtime
+		= t 'movie.duration_unit'

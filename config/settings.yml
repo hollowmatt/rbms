@@ -1,1 +1,8 @@
-settings.yml
+#TMDB.com API key
+tmdb: 
+  api_key: "7b8bf2fd5c51507ef3e8b77146b67029"
+  # host: "http://api.themoviedb.org/"
+  host: "http://private-4cb0-themoviedb.apiary.io"
+
+#timeout for services, in seconds
+service_call_timeout: 5

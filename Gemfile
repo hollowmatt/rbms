@@ -16,8 +16,12 @@ gem 'json'
 gem 'haml'
 gem 'faraday'
 gem 'faraday_middleware'
+gem 'builder'
+gem 'multi_json'
 gem 'hashie'
 gem 'rails_config'
+gem 'multi_xml'
+gem 'zurb-foundation'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -31,6 +35,7 @@ group :development, :test do
   gem "pry-debugger"
   gem 'foreman'
   gem 'rack-mini-profiler'
+  gem 'guard-rspec'
 end 
 
 group :test do
