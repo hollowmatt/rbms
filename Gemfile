@@ -41,3 +41,7 @@ end
 group :test do
 	gem 'vcr'
 end
+
+
+gem "less-rails"
+gem "twitter-bootstrap-rails"

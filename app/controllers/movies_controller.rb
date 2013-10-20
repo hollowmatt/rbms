@@ -4,6 +4,7 @@ class MoviesController <  ApplicationController
 		id = 107 #params[:id]
 		logger.info("in the show action")
 		@movie = TmdbService.get_movie_by_id(id)
+		logger.info("poster: " + TmdbService.get_movie_poster_url_by_size(@movie.poster_path, Settings.tmdb.poster.size.pdp))
 		@poster = TmdbService.get_movie_poster_url_by_size(@movie.poster_path, Settings.tmdb.poster.size.pdp)
 	end
 

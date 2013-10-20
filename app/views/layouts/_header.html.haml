@@ -1,5 +1,12 @@
-%header
-  %nav.round
+.navbar.navbar-inverse.navbar-static-top
+  .navbar-header
+    = link_to "RBMS", root_path, {:class => 'navbar-brand'}
+  .collapse.navbar-collapse.navbar-ex1-collapse
     %ul
-      %li= link_to "Home", root_path
-      %li= link_to "Help", "#"
+      %li.active
+        = link_to "Home", root_path
+      %li
+        = link_to "Help", "#"
+    %ul.nav.navbar-nav.navbar-right
+      %li.dropdown
+        = link_to "Login", "#"
