@@ -38,6 +38,11 @@ module TmdbService
 			end
 			@data_mapper.movie_result(raw_response)
 		end
+
+		def get_movie_poster_url_by_size(path, size)
+			poster_url = Settings.tmdb.base_url + "/#{size}#{path}"
+		end
+
 	end
 end
 
