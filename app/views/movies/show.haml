@@ -13,3 +13,11 @@
 			= t 'movie.runtime'
 		= @movie.runtime
 		= t 'movie.duration_unit'
+%p
+	- @cast_list.each do |actor|
+		- path = Settings.tmdb.base_url + "/" + Settings.tmdb.poster.size.tile 
+		- if actor.profile_path
+			= image_tag path + actor.profile_path
+		= actor.name
+
+%p

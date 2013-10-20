@@ -13,6 +13,7 @@ module DataMappers
   			}
   			movies << Movie.new(movie_props)
   		end
+      movies
   	end
 
   	def movie_result(raw_response)
@@ -30,5 +31,19 @@ module DataMappers
 			}
 			Movie.new(movie_props)
 		end
+
+    def cast_list(raw_response)
+      cast_list = Array.new
+      cast = raw_response.body.cast
+      cast.each do |actor|
+        actor_props = {
+          id: actor.try(:id),
+          name: actor.try(:name),
+          profile_path: actor.try(:profile_path)
+        }
+        cast_list << Actor.new(actor_props)
+      end
+      cast_list
+    end
   end
 end

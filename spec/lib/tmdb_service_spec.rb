@@ -33,6 +33,15 @@ describe "TMDB Service" do
 			end
 		end
 
+		describe "Get Cast for a movie" do
+			it "should return cast members" do
+				cast = TmdbService.get_movie_cast(id)
+				expect(cast.length).to be > 0
+				expect(cast.include?(cast.detect {|actor| actor["name"] == "Jason Statham" })).to be_true
+				expect(cast.include?(cast.detect {|actor| actor["name"] == "Conan O'Brien"})).to be_false
+			end
+		end
+
 	end
 
 	context "Rainy Day Tests" do
