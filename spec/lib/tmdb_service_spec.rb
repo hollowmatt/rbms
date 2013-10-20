@@ -29,7 +29,6 @@ describe "TMDB Service" do
 		describe "Get movie poster" do
 			it "should return a movie poster" do
 				poster_path = TmdbService.get_movie_poster_url_by_size(path, Settings.tmdb.poster.size.tile)
-				puts poster_path
 				expect(poster_path).not_to be_nil
 			end
 		end
