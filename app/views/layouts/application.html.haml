@@ -7,8 +7,8 @@
     = javascript_include_tag "vendor/custom.modernizr"
     = csrf_meta_tags
   %body
+    = render 'layouts/header'
     .container
-      = render 'layouts/header'
       %section.round
         - flash.each do |key, value|
           %div{class: "flash #{key}"}= value
