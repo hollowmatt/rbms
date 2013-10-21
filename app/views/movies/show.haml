@@ -14,10 +14,20 @@
 		= @movie.runtime
 		= t 'movie.duration_unit'
 %p
-	- @cast_list.each do |actor|
-		- path = Settings.tmdb.base_url + "/" + Settings.tmdb.poster.size.tile 
-		- if actor.profile_path
-			= image_tag path + actor.profile_path
-		= actor.name
-
+	#actors
+		%p
+			%a{:class => 'prev'}
+				<
+		.carousel
+			%ul
+				- @cast_list.each do |actor|
+					- if actor.profile_path
+						- path = Settings.tmdb.base_url + "/" + Settings.tmdb.poster.size.tile + actor.profile_path
+						%li
+							= image_tag path, :alt => actor.name 
+		%p
+			%a{:class => 'next'}
+				>
+	.clear
 %p
+

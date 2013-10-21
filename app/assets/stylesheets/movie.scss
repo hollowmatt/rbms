@@ -1,0 +1,40 @@
+.carousel {
+  padding: 10px 0 0 0;
+  margin: 0 0 20px 10px;
+  position: relative; 
+  float: left;
+  background-color: #dfdfdf;
+}
+
+.carousel ul { 
+  padding: 0;
+  margin: 0;
+}
+
+.carousel ul li {
+  list-style-type: none;
+  display: inline-block;
+  text-align: center;
+  list-style: none;
+  float:  left;
+  padding: 10;
+  width: 300px
+}
+
+.carousel li p {
+	background-color: #fff;
+	width: 150px;
+	height: 118px;
+	margin: 10px;
+}
+
+.carousel button { 
+  float: left;
+}              
+
+#actors a.prev, #actors a.next {
+  display: block;
+  float: left;
+  text-decoration: none;
+}
+    
