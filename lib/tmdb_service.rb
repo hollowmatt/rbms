@@ -17,7 +17,7 @@ module TmdbService
 			@headers.merge('X-Service-Name' => name)
 			begin
 				raw_response = @conn.get(path, params, @headers)
-			rescue exception 
+			rescue
 				#do something exceptional
 			end
 			@data_mapper.movie_results(raw_response)
@@ -32,7 +32,7 @@ module TmdbService
 			@headers.merge('X-Service-Name' => name)
 			begin
 				raw_response = @conn.get(path, params, @headers)
-			rescue exception 
+			rescue
 				#do something exceptional
 			end
 			@data_mapper.movie_result(raw_response)
@@ -52,7 +52,7 @@ module TmdbService
 			@headers.merge('X-Service-Name' => name)
 			begin 
 				raw_response = @conn.get(path, params, @headers)
-			rescue exception
+			rescue
 				#do something exceptional
 			end
 			cast = @data_mapper.cast_list(raw_response)
