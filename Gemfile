@@ -21,7 +21,6 @@ gem 'multi_json'
 gem 'hashie'
 gem 'rails_config'
 gem 'multi_xml'
-gem 'zurb-foundation'
 gem "less-rails"
 gem "twitter-bootstrap-rails"
 
