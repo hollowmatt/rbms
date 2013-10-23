@@ -13,21 +13,14 @@
 			= t 'movie.runtime'
 		= @movie.runtime
 		= t 'movie.duration_unit'
+%h2
+	Cast
 %p
 	#actors
-		%p
-			%a{:class => 'prev'}
-				<
-		.carousel
-			%ul
-				- @cast_list.each do |actor|
-					- if actor.profile_path
-						- path = Settings.tmdb.base_url + "/" + Settings.tmdb.poster.size.tile + actor.profile_path
-						%li
-							= image_tag path, :alt => actor.name 
-		%p
-			%a{:class => 'next'}
-				>
-	.clear
+		=render "common/carousel",  {tiles: @cast_list}
+%h2
+	Similar Movies
 %p
+	#similar_movies
+		=render "common/carousel", {tiles: @movie_list}
 

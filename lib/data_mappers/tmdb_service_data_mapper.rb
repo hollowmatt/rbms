@@ -45,5 +45,19 @@ module DataMappers
       end
       cast_list
     end
+
+    def similar_movies(raw_response)
+      movie_list = Array.new
+      movies = raw_response.body.results
+      movies.each do |movie|
+        movie_props = {
+          id: movie.try(:id),
+          title: movie.try(:title),
+          poster_path: movie.try(:poster_path)
+        }
+        movie_list << Movie.new(movie_props)
+      end
+      movie_list
+    end
   end
 end

@@ -59,9 +59,20 @@ module TmdbService
 		end
 
 		def get_similar_movies(id)
-
+			movies = Array.new
+			name = "TmdbService#GetSimilarMovies"
+			path = "/3/movie/#{id}/similar_movies"
+			params = {
+				api_key: @key
+			}
+			@headers.merge('X-Service-Name' => name)
+			begin
+				raw_response = @conn.get(path, params, @headers)
+			rescue
+				#do something exceptional
+			end
+			movies = @data_mapper.similar_movies(raw_response)		
 		end
-
 	end
 end
 

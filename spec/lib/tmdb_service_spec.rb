@@ -42,6 +42,14 @@ describe "TMDB Service" do
 			end
 		end
 
+		describe "Get similar movies to a movie" do
+			it "should return a list of similar movies" do
+				similar_movies = TmdbService.get_similar_movies(id)
+				expect(similar_movies.length).to be > 0
+				expect(similar_movies.include?(similar_movies.detect {|movie| movie["title"] == "Hardcover"})).to be_true
+				expect(similar_movies.include?(similar_movies.detect {|movie| movie["title"] == "something else"})).to be_false
+			end
+		end
 	end
 
 	context "Rainy Day Tests" do

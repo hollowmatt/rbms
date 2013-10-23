@@ -1,0 +1,13 @@
+%p
+	%a{:class => 'prev'}
+		<
+.carousel
+	%ul
+		- tiles.each do |tile|
+			- if tile.image_path
+				- path = Settings.tmdb.base_url + "/" + Settings.tmdb.poster.size.tile + tile.image_path
+				%li
+					= image_tag path, :alt => tile.image_text
+%p
+	%a{:class => 'next'}
+		>

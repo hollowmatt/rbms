@@ -6,7 +6,8 @@ class MoviesController <  ApplicationController
 		@movie = TmdbService.get_movie_by_id(id)
 		logger.info("poster: " + TmdbService.get_movie_poster_url_by_size(@movie.poster_path, Settings.tmdb.poster.size.pdp))
 		@poster = TmdbService.get_movie_poster_url_by_size(@movie.poster_path, Settings.tmdb.poster.size.pdp)
-		@cast_list = TmdbService.get_movie_cast(id)
+		@cast_list = TileMaker.actor_tiles(TmdbService.get_movie_cast(id))
+		@movie_list = TileMaker.movie_tiles(TmdbService.get_similar_movies(id))
 	end
 
 	def find
