@@ -32,6 +32,7 @@ end
 group :development, :test do
 	gem 'debugger'
 	gem 'rspec-rails'
+  gem 'factory_girl_rails'
 	gem 'pry'
   gem "pry-debugger"
   gem 'foreman'
@@ -41,6 +42,9 @@ end
 
 group :test do
 	gem 'vcr'
+  gem 'faker'
+  gem 'capybara'
+  gem 'launchy'
 end
 
 
