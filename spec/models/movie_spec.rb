@@ -5,11 +5,17 @@ describe Movie do
 	
 	context "Sunny Day" do
 		before(:each) do
-			@movie = Movie.new
+			@movie = Movie.new(:id => 107)
 			@movie.title = "Snatch"
-			@movie.id = 107
+			# @movie.id = 107
 			@movie.adult = false
 			@movie.status = "Released"
+		end
+
+		describe "Movie" do
+			it "is invalid without an id" do
+				expect{ Movie.new }.to raise_error(ArgumentError)
+			end
 		end
 
 		describe "get availablity" do

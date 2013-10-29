@@ -1,6 +1,6 @@
 class Movie < Hashie::Dash
 	#general properties
-	property :id
+	property :id, required: true
 	property :title
 	property :release_date
 	property :tagline
