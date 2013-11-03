@@ -1,36 +1,39 @@
+$carousel-width: 100%; // used as default. override with js
+$carousel-horizontal-padding: 10px;
+$carousel-transition-property: left;
+$carousel-transition-duration: .3s;
+$carousel-transition-easing-function: ease-out;
+$carousel-transition: $carousel-transition-property $carousel-transition-duration $carousel-transition-easing-function;
+
 .carousel {
+  position: relative;
   padding: 10px 0 0 0;
   margin: 0 0 20px 10px;
-  position: relative; 
-  float: left;
-  background-color: #dfdfdf;
-}
+  left: 0;
+  width: $carousel-width;
+  background-color: white;
 
-.carousel ul { 
-  padding: 0;
-  margin: 0;
-}
-
-.carousel ul li {
-  list-style-type: none;
-  display: inline-block;
-  text-align: center;
-  list-style: none;
-  float:  left;
-  padding: 10;
-  width: 300px
-}
-
-.carousel li p {
-	background-color: #fff;
-	width: 150px;
-	height: 118px;
-	margin: 10px;
-}
-
-.carousel button { 
-  float: left;
-}              
+  ul {
+    position: relative;
+    left: 0;
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    
+    li {
+      list-style-type: none;
+      list-style: none;
+      text-align: center;
+      float:  left;
+      padding: 0, 15px, 0, 15px;
+      display: inline-block;
+      width: 230px;
+      height: 350px;
+      vertical-align: bottom;
+    } // li
+  } // ul
+} // .carousel
+              
 
 #actors a.prev, #actors a.next {
   display: block;
@@ -38,3 +41,16 @@
   text-decoration: none;
 }
     
+.image-tile {
+  position: absolute;
+  .image img {
+    max-width: 230px;
+    max-height: 350px;
+  }
+}
+
+.info-section {
+  height: 110px;
+  position: relative;
+}
+

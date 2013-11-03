@@ -13,7 +13,6 @@
  *= require_tree .
  */
 
-
 header {
 	padding-top: 20px;
 }
@@ -95,6 +94,9 @@ nav ul li a:hover {
 	-webkit-border-radius: 10px;
 	border-radius: 10px;
 }
-.
+
+.title {
+  color: #b1003e;
+}
 
 

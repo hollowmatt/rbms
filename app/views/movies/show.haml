@@ -14,13 +14,13 @@
 		= @movie.runtime
 		= t 'movie.duration_unit'
 %h2
-	Cast
+	=t('views.movies.show.cast-title')
 %p
 	#actors
-		=render "common/carousel",  {tiles: @cast_list}
+		=render "common/carousel",  {tiles: @cast_list }
 %h2
-	Similar Movies
+	=t('views.movies.show.similar-movies-title')
 %p
 	#similar_movies
-		=render "common/carousel", {tiles: @movie_list}
+		=render "common/carousel", {tiles: @movie_list }
 
