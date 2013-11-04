@@ -50,6 +50,27 @@ describe "TMDB Service" do
 				expect(similar_movies.include?(similar_movies.detect {|movie| movie["title"] == "something else"})).to be_false
 			end
 		end
+
+		describe "Get popular movies" do
+			it "should return a list of popular movies" do
+				popular_movies = TmdbService.get_popular_movies
+				expect(popular_movies.length).to be > 0
+			end
+		end
+
+		describe "Get playing movies" do
+			it "should return a list of now playing movies" do
+				playing_movies = TmdbService.get_playing_movies
+				expect(playing_movies.length).to be > 0
+			end
+		end
+
+		describe "Get coming movies" do
+			it "should return a list of coming movies" do
+				coming_movies = TmdbService.get_coming_movies
+				expect(coming_movies.length).to be > 0
+			end
+		end
 	end
 
 	context "Rainy Day Tests" do

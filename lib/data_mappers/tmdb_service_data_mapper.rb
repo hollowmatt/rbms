@@ -46,7 +46,7 @@ module DataMappers
       cast_list
     end
 
-    def similar_movies(raw_response)
+    def list_of_movies(raw_response)
       movie_list = Array.new
       movies = raw_response.body.results
       movies.each do |movie|

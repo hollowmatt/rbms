@@ -28,3 +28,8 @@ en_US:
       show:
         cast-title: 'Cast'
         similar-movies-title: 'Other movies like this'
+    home:
+      index:
+        popular-movies-title: "What's Hot Now"
+        playing-movies-title: "In theatres now!"
+        coming-movies-title: "Coming soon, to a theatre near you"

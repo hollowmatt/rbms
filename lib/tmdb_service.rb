@@ -71,7 +71,56 @@ module TmdbService
 			rescue
 				#do something exceptional
 			end
-			movies = @data_mapper.similar_movies(raw_response)		
+			movies = @data_mapper.list_of_movies(raw_response)		
+		end
+
+		# These three methods are ripe for refactor to a single method
+		def get_popular_movies
+			movies = Array.new
+			name = "TmdbService#GetPopularMovies"
+			path = "/3/movie/popular"
+			params = {
+				api_key: @key
+			}
+			@headers.merge('X-Service-Name' => name)
+			begin
+				raw_response = @conn.get(path, params, @headers)
+			rescue
+				#do something exceptional
+			end
+			movies = @data_mapper.list_of_movies(raw_response)
+		end
+
+		def get_playing_movies
+			movies = Array.new
+			name = "TmdbService#GetPlayingMovies"
+			path = "/3/movie/now_playing"
+			params = {
+				api_key: @key
+			}
+			@headers.merge('X-Service-Name' => name)
+			begin
+				raw_response = @conn.get(path, params, @headers)
+			rescue
+				#do something exceptional
+			end
+			movies = @data_mapper.list_of_movies(raw_response)
+		end
+
+		def get_coming_movies
+			movies = Array.new
+			name = "TmdbService#GetComingMovies"
+			path = "/3/movie/upcoming"
+			params = {
+				api_key: @key
+			}
+			@headers.merge('X-Service-Name' => name)
+			begin
+				raw_response = @conn.get(path, params, @headers)
+			rescue
+				#do something exceptional
+			end
+			movies = @data_mapper.list_of_movies(raw_response)
 		end
 	end
 end

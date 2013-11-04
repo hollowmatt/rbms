@@ -1,4 +1,17 @@
 .h1
 	= @hero
-.p
-	= @popular
+%h2
+	=t('views.home.index.popular-movies-title')
+%p
+	#popular_movies
+		=render "common/carousel", {tiles: @popular, link: 'movies' }
+%h2
+	=t('views.home.index.playing-movies-title')
+%p
+	#now_playing
+		=render "common/carousel", {tiles: @playing, link: 'movies' }
+%h2
+	=t('views.home.index.coming-movies-title')
+%p
+	#coming_soon
+		=render "common/carousel", {tiles: @coming, link: 'movies' }
