@@ -1,3 +1,6 @@
 Rbms::Application.routes.draw do
-  root :to => 'movies#show'
+  root :to => 'home#index'
+
+  get '/movies/:id' => 'movies#show', as: :movies_show
+  get '/movies/find' => 'movies#find'
 end

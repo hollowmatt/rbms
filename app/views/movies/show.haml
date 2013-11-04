@@ -17,10 +17,10 @@
 	=t('views.movies.show.cast-title')
 %p
 	#actors
-		=render "common/carousel",  {tiles: @cast_list }
+		=render "common/carousel",  {tiles: @cast_list, link: '#' }
 %h2
 	=t('views.movies.show.similar-movies-title')
 %p
 	#similar_movies
-		=render "common/carousel", {tiles: @movie_list }
+		=render "common/carousel", {tiles: @movie_list, link: 'movies' }
 

@@ -9,7 +9,10 @@
 				%li.item-tile
 					.image-tile
 						%span.image
-							= image_tag path
+							- if link == "#"
+								= image_tag path
+							- else
+								= link_to image_tag(path), movies_show_path(tile.image_id) 
 						.info-section
 							.caption
 								= tile.image_text
