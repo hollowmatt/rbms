@@ -23,6 +23,7 @@ gem 'rails_config'
 gem 'multi_xml'
 gem "less-rails"
 gem "twitter-bootstrap-rails"
+gem "font-awesome-rails"
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

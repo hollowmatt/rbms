@@ -35,10 +35,22 @@ $carousel-transition: $carousel-transition-property $carousel-transition-duratio
 } // .carousel
               
 
-#actors a.prev, #actors a.next {
+#actors {
   display: block;
-  float: left;
   text-decoration: none;
+  a.prev {
+    float: left;
+    height: 350px;
+  }
+  a.next {
+    float: right;
+  }
+  i.icon-chevron-right {
+    height: 350px;
+  }
+  i.icon-chevron-left {
+    height: 350px;
+  }
 }
     
 .image-tile {

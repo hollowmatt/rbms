@@ -1,17 +1,26 @@
-.h1
-	= @hero
-%h2
-	=t('views.home.index.popular-movies-title')
-%p
-	#popular_movies
-		=render "common/carousel", {tiles: @popular, link: 'movies' }
-%h2
-	=t('views.home.index.playing-movies-title')
-%p
-	#now_playing
-		=render "common/carousel", {tiles: @playing, link: 'movies' }
-%h2
-	=t('views.home.index.coming-movies-title')
-%p
-	#coming_soon
-		=render "common/carousel", {tiles: @coming, link: 'movies' }
+.center.container
+	.hero-unit
+		.row
+			.span6
+				= image_tag "homepage-hero.png"
+			.span4
+				%h2
+					Welcome To NOOK RuBee
+				%p
+					This is a simple site, using Ruby 2/Rails 4 built with Twitter Bootstrap for look/feel.  The general idea is to have a site heavy with service calls, images and content to demonstrate how to improve performance when the 'odds' are stacked against you.
+	
+	%h2
+		=t('views.home.index.popular-movies-title')
+	%p
+		#popular_movies
+			=render "common/carousel", {tiles: @popular, link: 'movies' }
+	%h2
+		=t('views.home.index.playing-movies-title')
+	%p
+		#now_playing
+			=render "common/carousel", {tiles: @playing, link: 'movies' }
+	%h2
+		=t('views.home.index.coming-movies-title')
+	%p
+		#coming_soon
+			=render "common/carousel", {tiles: @coming, link: 'movies' }

@@ -5,3 +5,9 @@
   To use Glyphicons sprites instead of Font Awesome, replace with "require twitter-bootstrap-static/sprites"
   =require twitter-bootstrap-static/fontawesome
   */
+  .hero-unit {
+  	background-color: white;
+  	border: thin;
+  	border-color: black;
+  	border-radius: 5px;
+  }

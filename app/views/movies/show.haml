@@ -1,26 +1,33 @@
-%h1
-	= @movie.title
-
-%hr
-%p
-	= image_tag @poster
-%p
-	= @movie.tagline
-	%br
-	= @movie.overview
-	%br
-		%b
-			= t 'movie.runtime'
-		= @movie.runtime
-		= t 'movie.duration_unit'
-%h2
-	=t('views.movies.show.cast-title')
-%p
-	#actors
-		=render "common/carousel",  {tiles: @cast_list, link: '#' }
-%h2
-	=t('views.movies.show.similar-movies-title')
-%p
-	#similar_movies
-		=render "common/carousel", {tiles: @movie_list, link: 'movies' }
+.center.container
+	.row
+		.span12
+			%h1
+				= @movie.title
+	.row
+		.span4
+			= image_tag @poster
+		.span8
+			%p
+				= @movie.tagline
+			%p
+				= @movie.overview
+			%br
+				%b
+					= t 'movie.runtime'
+					= @movie.runtime
+					= t 'movie.duration_unit'
+	.row
+		.span12
+			%h2
+				=t('views.movies.show.cast-title')
+			%p
+				#actors
+					=render "common/carousel",  {tiles: @cast_list, link: '#' }
+	.row
+		.span12
+			%h2
+				=t('views.movies.show.similar-movies-title')
+			%p
+				#similar_movies
+					=render "common/carousel", {tiles: @movie_list, link: 'movies' }
 
