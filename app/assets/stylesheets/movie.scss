@@ -5,6 +5,28 @@ $carousel-transition-duration: .3s;
 $carousel-transition-easing-function: ease-out;
 $carousel-transition: $carousel-transition-property $carousel-transition-duration $carousel-transition-easing-function;
 
+.chevron {
+  height: 200px;
+  position: relative;
+
+  a.prev {
+    float: left;
+    height: 100%;
+    position: relative;
+  }
+
+  a.next {
+    float: right;
+    height: 100%;
+    position: relative;
+  }
+  
+  i.icon-chevron-right, i.icon-chevron-left {
+    top: 50%;
+    position: absolute;
+  }
+}
+
 .carousel {
   position: relative;
   padding: 10px 0 0 0;
@@ -28,29 +50,16 @@ $carousel-transition: $carousel-transition-property $carousel-transition-duratio
       padding: 0, 15px, 0, 15px;
       display: inline-block;
       width: 230px;
-      height: 350px;
+      height: 200px;
       vertical-align: bottom;
     } // li
   } // ul
 } // .carousel
               
 
-#actors {
+#actors, #similar {
   display: block;
   text-decoration: none;
-  a.prev {
-    float: left;
-    height: 350px;
-  }
-  a.next {
-    float: right;
-  }
-  i.icon-chevron-right {
-    height: 350px;
-  }
-  i.icon-chevron-left {
-    height: 350px;
-  }
 }
     
 .image-tile {
