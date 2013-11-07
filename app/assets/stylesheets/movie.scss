@@ -8,6 +8,7 @@ $carousel-transition: $carousel-transition-property $carousel-transition-duratio
 .chevron {
   display: block;
   margin: 30px 10px 0 0;
+  cursor: pointer;
   &.next { margin: 30px 0 0 10px;  }
   float: left;
   i.icon-chevron-right, i.icon-chevron-left {
