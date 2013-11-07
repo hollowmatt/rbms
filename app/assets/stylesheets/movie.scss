@@ -72,4 +72,21 @@ $carousel-transition: $carousel-transition-property $carousel-transition-duratio
   height: 110px;
   position: relative;
 }
+@media (max-width: 979px) {
+  .carousel .viewport {
+    width: 400px;
+  }
+  .chevron {
+    width: auto;
+  }
+}
 
+@media (max-width: 599px) {
+  .carousel .viewport {
+    width: 100%;
+    overflow-x: scroll;
+  }
+  .chevron {
+    display: none;
+  }
+}
