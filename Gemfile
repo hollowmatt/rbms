@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 gem 'rails', '4.0.0'
 gem 'thin'
@@ -39,7 +39,7 @@ group :development, :test do
   gem 'foreman'
   # gem 'rack-mini-profiler'
   gem 'guard-rspec'
-end 
+end
 
 group :test do
 	gem 'vcr'
