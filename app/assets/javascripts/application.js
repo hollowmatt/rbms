@@ -25,9 +25,6 @@
 //     },5000);
 // });
 
-$(function() {
-    $(".carousel").jCarouselLite({
-        btnNext: ".next",
-        btnPrev: ".prev"
-    });
+$(document).ready(function() {
+    $('.carousel').tinycarousel({ display: 2 });
 });

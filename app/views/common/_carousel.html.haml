@@ -1,9 +1,9 @@
-.row
-	.chevron.span
+.row.carousel
+	.chevron.span.buttons.previous
 		%a{:class => 'prev'}
 			%i{:class => "fa fa-chevron-left fa-5x"}
-	.carousel.span8
-		%ul
+	.viewport.span8
+		%ul.overview
 			- tiles.each do |tile|
 				- if tile.image_path
 					- path = Settings.tmdb.base_url + "/" + Settings.tmdb.poster.size.tile + tile.image_path
@@ -13,10 +13,10 @@
 								- if link == "#"
 									= image_tag path
 								- else
-									= link_to image_tag(path), movies_show_path(tile.image_id) 
+									= link_to image_tag(path), movies_show_path(tile.image_id)
 							.info-section
 								.caption
 									= tile.image_text
-	.span.chevron
+	.span.chevron.buttons.next
 		%a{:class => 'next'}
 			%i{:class => "fa fa-chevron-right fa-5x"}
