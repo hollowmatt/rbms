@@ -24,6 +24,7 @@ gem 'multi_xml'
 gem "less-rails"
 gem "twitter-bootstrap-rails"
 gem "font-awesome-rails"
+gem 'actionpack-action_caching'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
