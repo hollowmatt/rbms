@@ -7,7 +7,7 @@ module ActionCacheHelper
   end
 
   def home_index_expire_cache?
-    expire_fragment_view_cache_for_key(home_index_cache_path, self) if refresh_now?
+    expire_fragment_view_cache_for_key(home_index_cache_path, self) if fresh_action_cache?
   end
 
   def create_action_cache_key(request, opts={})
@@ -23,7 +23,7 @@ module ActionCacheHelper
     controller.expire_fragment(ckey)
   end
 
-  def refresh_now?
+  def fresh_action_cache?
     params[:force_refresh] == "true"
   end
 
