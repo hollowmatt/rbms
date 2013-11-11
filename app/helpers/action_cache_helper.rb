@@ -10,6 +10,17 @@ module ActionCacheHelper
     expire_fragment_view_cache_for_key(home_index_cache_path, self) if fresh_action_cache?
   end
 
+  def movies_show_cache_path
+    create_action_cache_key(request, {}) do
+      "/movies/#{params[:id]}"
+    end
+  end
+
+  def movies_show_expire_cache?
+    expire_fragment_view_cache_for_key(movies_show_cache_path, self) if fresh_action_cache?
+  end
+
+  # common methods
   def create_action_cache_key(request, opts={})
     params = request.params
     options_hash_string = opts.hash.to_s
