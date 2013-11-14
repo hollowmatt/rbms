@@ -1,0 +1,4 @@
+%section.search_results
+  %ul.movie_list
+    - @movie_tiles.each do |tile|
+      = render "common/tile", { tile: tile, link: 'movies' }

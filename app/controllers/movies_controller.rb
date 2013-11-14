@@ -11,8 +11,8 @@ class MoviesController <  ApplicationController
 	end
 
 	def find
-		name = "Snatch" #params[:title]
-		logger.info("in the show action")
-		@movie = TmdbService.find_movie_by_name(name)
+		name = params[:title]
+		logger.info("in the find action")
+		@movie_tiles = TileMaker.movie_tiles(TmdbService.find_movie_by_name(name))
 	end	
 end

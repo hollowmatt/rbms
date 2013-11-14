@@ -26,8 +26,17 @@ describe MoviesController do
 	end
 
 	describe 'GET #find' do
-		it "assigns @movies"
-		it "renders the :find view"
+    let(:title) {'planet'}
+
+		it "assigns @movie_tiles" do
+      get :find, {:title => title}
+      expect(assigns(:movie_tiles)).to_not be_nil
+    end
+
+		it "renders the :find view" do
+      get :find, {:title => title}
+      expect(response).to render_template('find')
+    end
 	end
 
 end
