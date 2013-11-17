@@ -1,7 +1,8 @@
 class MoviesController <  ApplicationController
-  include ActionCacheHelper
+  include MoviesHelper
 
   before_filter :movies_show_expire_cache?, :only => [:show]
+  before_filter :movies_find_expire_cache?, :only => [:find]
 
   caches_action :show,
     :cache_path => :movies_show_cache_path.to_proc,
@@ -9,6 +10,11 @@ class MoviesController <  ApplicationController
     'max-stale' => 2.hours,
     :public => true
 
+  caches_action :find,
+    :cache_path => :movies_find_cache_path.to_proc,
+    :expires_in => 90.minutes,
+    'max-stale' => 2.hours,
+    :public => true
 
 	def show
 		id = params[:id]

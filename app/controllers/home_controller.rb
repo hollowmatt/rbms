@@ -1,6 +1,6 @@
 # home_controller.rb
 class HomeController < ApplicationController
-  include ActionCacheHelper
+  include HomeHelper
 
   before_filter :home_index_expire_cache?, :only => [:index]
 
