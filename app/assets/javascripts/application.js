@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require turbolinks
 //= require twitter/bootstrap
 //= require_tree .
 
@@ -25,6 +26,9 @@
 //     },5000);
 // });
 
-$(document).ready(function() {
-    $('.carousel').tinycarousel({ display: 2 });
-});
+var ready = function() {
+  $('.carousel').tinycarousel({ display: 2 });
+};
+
+$(document).ready(ready);
+$(document).on('page:load', ready);

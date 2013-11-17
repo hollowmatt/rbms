@@ -4,6 +4,7 @@
     %meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}
     %title= content_for?(:title) ? yield(:title) : "Untitled"
     = stylesheet_link_tag    "application"
+    = javascript_include_tag "application"
     = csrf_meta_tags
   %body
     = render 'layouts/header'
@@ -13,5 +14,4 @@
           %div{class: "flash #{key}"}= value
         = yield
       = render 'layouts/footer'
-    = javascript_include_tag "application"
     = debug(params) if Rails.env.development?
