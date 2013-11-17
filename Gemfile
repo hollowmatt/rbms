@@ -27,7 +27,6 @@ gem "font-awesome-rails"
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
-  gem 'sqlite3'
 end
 
 group :development, :test do
@@ -38,6 +37,7 @@ group :development, :test do
   gem "pry-debugger"
   gem 'foreman'
   # gem 'rack-mini-profiler'
+  gem 'sqlite3'
   gem 'guard-rspec'
 end
 
