@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require_tree .
+//= require lazy_load
 
 // $(document).ready(function(){
 //     // Set the interval to be 5 seconds
