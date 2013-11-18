@@ -31,5 +31,5 @@ en_US:
     home:
       index:
         popular-movies-title: "What's Hot Now"
-        playing-movies-title: "In theatres now!"
-        coming-movies-title: "Coming soon, to a theatre near you"
+        now-playing-title: "In theatres now!"
+        coming-soon-title: "Coming soon, to a theatre near you"

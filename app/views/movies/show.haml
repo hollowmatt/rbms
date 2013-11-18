@@ -16,18 +16,27 @@
 					= t 'movie.runtime'
 					= @movie.runtime
 					= t 'movie.duration_unit'
-	.row
-		.span12
-			%h2
-				=t('views.movies.show.cast-title')
-			%p
-				#actors
-					=render "common/carousel",  {tiles: @cast_list, data_lazy_load: "", link: '#' }
-	.row
-		.span12
-			%h2
-				=t('views.movies.show.similar-movies-title')
-			%p
-				#similar
-					=render "common/carousel", {tiles: @movie_list, data_lazy_load: "", link: 'movies' }
 
+	- @carousels.each do |carousel|
+		.row
+			.span12
+				%h2
+					=t("views.movies.show.#{carousel.name}-title")
+				%p
+					%div{id: "#{carousel.name}"}
+						=render "common/carousel", {carousel: carousel}
+
+	/ .row
+	/ 	.span12
+	/ 		%h2
+	/ 			=t('views.movies.show.cast-list-title')
+	/ 		%p
+	/ 			#actors
+	/ 				=render "common/carousel",  {tiles: @cast_list, data_lazy_load: "", link: '#' }
+	/ .row
+	/ 	.span12
+	/ 		%h2
+	/ 			=t('views.movies.show.similar-movies-list-title')
+	/ 		%p
+	/ 			#similar
+	/ 				=render "common/carousel", {tiles: @movie_list, data_lazy_load: "", link: 'movies' }

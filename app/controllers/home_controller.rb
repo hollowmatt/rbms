@@ -11,7 +11,7 @@ class HomeController < ApplicationController
     :public => true
 
   def index
-    @popular = TileMaker.movie_tiles(TmdbService.get_popular_movies)
+    @carousels = CarouselMaker.all_carousels_with_some_lazy_loading
     render :index
   end
 

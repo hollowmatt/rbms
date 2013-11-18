@@ -1,5 +1,5 @@
-- if data_lazy_load.present?
-	.row.carousel{:'data-lazy-load' => data_lazy_load}
-- else tiles.present?
+- if carousel.lazy_load?
+	.row.carousel{:'data-lazy-load' => carousel.lazy_load_resource}
+- elsif carousel.has_tiles?
 	.row.carousel
-		=render "common/carousel_items", {tiles: tiles, link: 'movies' }
+		=render "common/carousel_items", {tiles: carousel.tiles, link: '' }
