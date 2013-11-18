@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe HomeController do
-	
+
 	describe "GET index" do
 		before (:each) { get :index}
 
@@ -10,15 +10,15 @@ describe HomeController do
 		end
 
 		it "assigns playing movies" do
-			expect(assigns(:playing)).to_not be_nil
+			expect(assigns(:playing)).to be_nil
 		end
 
 		it "assigns coming movies" do
-			expect(assigns(:coming)).to_not be_nil
+			expect(assigns(:coming)).to be_nil
 		end
 
 		it "renders the index view" do
-			expect(response).to render_template("index") 
+			expect(response).to render_template("index")
 		end
 	end
 end
