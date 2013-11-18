@@ -3,8 +3,6 @@ ruby '2.0.0'
 
 gem 'rails', '4.0.0'
 gem 'thin'
-# pull this out in future, don't need it
-gem 'sqlite3'
 
 gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
@@ -40,6 +38,7 @@ group :development, :test do
   gem "pry-debugger"
   gem 'foreman'
   # gem 'rack-mini-profiler'
+  gem 'sqlite3'
   gem 'guard-rspec'
 end
 

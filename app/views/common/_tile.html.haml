@@ -1,0 +1,12 @@
+- if tile.image_path
+  - path = Settings.tmdb.base_url + "/" + Settings.tmdb.poster.size.tile + tile.image_path
+  %li.item-tile
+    .image-tile
+      %span.image
+        - if link == "#"
+          = image_tag path
+        - else
+          = link_to image_tag(path), movies_show_path(tile.image_id)
+    .info-section
+      .caption
+        = tile.image_text

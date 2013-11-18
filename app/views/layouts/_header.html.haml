@@ -9,3 +9,7 @@
             = link_to "Home", root_path
           %li
             = link_to "Help", "#"
+
+      .search-bar
+        = form_tag(movies_find_path, method: 'GET', class: 'search-form') do
+          = text_field_tag 'title', '', class: 'search-box', 'aria-label' => 'Search'
