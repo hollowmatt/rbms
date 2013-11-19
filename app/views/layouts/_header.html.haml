@@ -2,14 +2,19 @@
   .navbar-inner
     .container
       %a.btn.btn-navbar{:data => {:target => '.navbar-inverse-collapse', :toggle => 'collapse'}}
-      -#= link_to "RBMS", root_path, {:class => 'navbar-brand'}
+        .icon-bar
+        .icon-bar
+        .icon-bar
       .nav-collapse.collapse.navbar-inverse-collapse
         %ul.nav
           %li.active
             = link_to "Home", root_path
           %li
             = link_to "Help", "#"
-
-      .search-bar
-        = form_tag(movies_find_path, method: 'GET', class: 'search-form') do
-          = text_field_tag 'title', '', class: 'search-box', 'aria-label' => 'Search'
+        .search-bar
+          %ul.nav
+            %li
+              = "Search"
+            %li
+              = form_tag(movies_find_path, method: 'GET', class: 'search-form') do
+                = text_field_tag 'title', '', class: 'search-box', 'aria-label' => 'Search'
