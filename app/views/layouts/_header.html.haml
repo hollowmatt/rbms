@@ -8,7 +8,7 @@
       .nav-collapse.collapse.navbar-inverse-collapse
         %ul.nav
           %li.active
-            = link_to "Home", root_path
+            = link_to "Home", main_app.homepage_path
           %li
             = link_to "Help", "#"
         .search-bar
@@ -16,5 +16,5 @@
             %li
               = "Search"
             %li
-              = form_tag(movies_find_path, method: 'GET', class: 'search-form') do
+              = form_tag(main_app.movies_find_path, method: 'GET', class: 'search-form') do
                 = text_field_tag 'title', '', class: 'search-box', 'aria-label' => 'Search'
