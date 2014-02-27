@@ -1,0 +1,6 @@
+<h1>Your Weather Right Now!</h1>
+<p>
+  Current temperature is: <%= @weather.temp_f %> degrees Farenheit<br/>
+  <%= image_tag(@weather.icon, :size => "64x64", :alt => "Current Conditions") %>
+
+</p>
