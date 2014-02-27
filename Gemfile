@@ -24,14 +24,7 @@ gem "less-rails"
 gem "twitter-bootstrap-rails"
 gem "font-awesome-rails"
 
-group :development, :test do
-  gem "wungine", :path => '../wungine'
-end
-
-group :production do
-  gem "wungine"
-end
-
+gem "wungine"
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
