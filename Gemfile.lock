@@ -1,5 +1,5 @@
 PATH
-  remote: vendor/private_gems/wungine-0.0.1
+  remote: ../wungine
   specs:
     wungine (0.0.1)
       faraday
