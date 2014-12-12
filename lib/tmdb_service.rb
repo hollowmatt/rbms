@@ -5,14 +5,13 @@ module TmdbService
 	@conn = build_conn(Settings.tmdb.host)
 	@data_mapper = default_data_mapper
 	@key = Settings.tmdb.api_key
-	@headers = {'Accept' => 'application/json', 'Content-Type' => 'application/json'}
+	@headers = {'Accept' => 'application/json', 'Content-Type' => 'application/json', 'api_key' => Settings.tmdb.api_key }
 	class << self
 		def find_movie_by_name(movie)
 			name = "TmdbService#FindMovieByName"
 			path = "3/search/movie"
 			params = {
-				query: movie,
-				api_key: @key
+				query: movie
 			}
 			@headers.merge('X-Service-Name' => name)
 			begin
@@ -27,7 +26,6 @@ module TmdbService
 			name = "TmdbService#GetMovieById"
 			path = "3/movie/#{id}"
 			params = {
-				api_key: @key
 			}
 			@headers.merge('X-Service-Name' => name)
 			begin
@@ -45,9 +43,8 @@ module TmdbService
 		def get_movie_cast(id)
 			cast = Array.new
 			name = "TmdbService#GetMovieCast"
-			path = "/3/movie/#{id}/casts"
+			path = "/3/movie/#{id}/credits"
 			params = {
-				api_key: @key
 			}
 			@headers.merge('X-Service-Name' => name)
 			begin 
@@ -61,9 +58,8 @@ module TmdbService
 		def get_similar_movies(id)
 			movies = Array.new
 			name = "TmdbService#GetSimilarMovies"
-			path = "/3/movie/#{id}/similar_movies"
+			path = "/3/movie/#{id}/similar"
 			params = {
-				api_key: @key
 			}
 			@headers.merge('X-Service-Name' => name)
 			begin
@@ -80,11 +76,10 @@ module TmdbService
 			name = "TmdbService#GetPopularMovies"
 			path = "/3/movie/popular"
 			params = {
-				api_key: @key
 			}
 			@headers.merge('X-Service-Name' => name)
 			begin
-				raw_response = @conn.get(path, params, @headers)
+      	raw_response = @conn.get(path, params, @headers)
 			rescue
 				#do something exceptional
 			end
@@ -96,7 +91,6 @@ module TmdbService
 			name = "TmdbService#GetPlayingMovies"
 			path = "/3/movie/now_playing"
 			params = {
-				api_key: @key
 			}
 			@headers.merge('X-Service-Name' => name)
 			begin
@@ -112,7 +106,6 @@ module TmdbService
 			name = "TmdbService#GetComingMovies"
 			path = "/3/movie/upcoming"
 			params = {
-				api_key: @key
 			}
 			@headers.merge('X-Service-Name' => name)
 			begin
