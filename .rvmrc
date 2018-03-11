@@ -1,3 +1,0 @@
-rvm use ruby-2.1.0@rbms --create
-
-command -p git status --short --branch || { echo "You really should install git." >&2; }
